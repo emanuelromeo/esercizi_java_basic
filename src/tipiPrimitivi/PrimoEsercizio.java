@@ -1,4 +1,4 @@
-package co.develhope.tipiPrimitivi;
+package tipiPrimitivi;
 import java.util.Scanner;
 
 public class PrimoEsercizio {

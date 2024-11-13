@@ -1,4 +1,4 @@
-package co.develhope.tipiPrimitivi;
+package tipiPrimitivi;
 
 public class SecondoEsercizio {
     public static void main(String[] args) {
