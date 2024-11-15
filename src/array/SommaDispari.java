@@ -1,3 +1,5 @@
+package array;
+
 public class SommaDispari {
     public static void main(String[] args) {
         int[] array = {56, 78, 45, 79, 34};

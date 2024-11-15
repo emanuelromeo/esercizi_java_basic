@@ -1,3 +1,5 @@
+package array;
+
 public class ElementiFrequenti {
     public static void main(String[] args) {
 
