@@ -8,8 +8,7 @@ public class Main {
         Animale tasso = new Animale("Tasso del miele", "Mustelide", "Grrr");
         System.out.println(tasso.getNome() + "\n");
 
-        System.out.print("Il verso del tasso del miele è: ");
-        tasso.emettiVerso();
+        System.out.println("Il verso del tasso del miele è: " + tasso.emettiVerso());
 
         System.out.println("-----------------------------------------");
 

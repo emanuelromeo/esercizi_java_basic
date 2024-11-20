@@ -13,11 +13,11 @@ public class Cerchio {
     }
 
     public double calcolaArea() {
-        return raggio * raggio * 3.14;
+        return raggio * raggio * Math.PI;
     }
 
     public  double calcolaCirconferenza() {
-        return raggio * 6.28;
+        return raggio * 2 * Math.PI;
     }
 
 }

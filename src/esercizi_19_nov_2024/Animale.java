@@ -14,8 +14,8 @@ public class Animale {
         return nome;
     }
 
-    public void emettiVerso() {
-        System.out.println(verso);
+    public String emettiVerso() {
+        return verso;
     }
 
 }

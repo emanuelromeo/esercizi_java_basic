@@ -7,7 +7,12 @@ public class Esame {
 
     public Esame(String nomeCorso, int punteggio) {
         this.nomeCorso = nomeCorso;
-        this.punteggio = punteggio;
+        if (punteggio >= 0 || punteggio <= 30 ) {
+            this.punteggio = punteggio;
+        } else {
+            System.out.println("Punteggio inserito non valido");
+            this.punteggio = 0;
+        }
     }
 
     public String getNomeCorso() {

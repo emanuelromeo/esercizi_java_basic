@@ -4,53 +4,66 @@ import java.util.Scanner;
 
 public class Calcolatrice {
 
-    private static void addizione(double a, double b) {
-        System.out.println(a + b);
+    private static double addizione(double a, double b) {
+        return a + b;
     }
 
-    private static void sottrazione(double a, double b) {
-        System.out.println(a - b);
+    private static double sottrazione(double a, double b) {
+        return a - b;
     }
 
-    private static void moltiplicazione(double a, double b) {
-        System.out.println(a * b);
+    private static double moltiplicazione(double a, double b) {
+        return a * b;
     }
 
-    private static void divisione(double a, double b) {
+    private static double[] divisione(double a, double b) {
+        double[] result = {a, 0};
         if (b != 0){
-            System.out.println(a / b);
-        } else {
-            System.out.println("indefinito");
+            result[0] = a / b;
+            result[1]++;
         }
+        return result;
+    }
+
+    private static double[] richiediNumeri(Scanner scanner) {
+        double[] numbers = new double[2];
+
+        System.out.print("\nPrimo numero: ");
+        numbers[0] = scanner.nextDouble();
+
+        System.out.print("Secondo numero: ");
+        numbers[1] = scanner.nextDouble();
+
+        return numbers;
     }
 
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Seleziona un'operazione:\n\n>> Addizione\n>> Sottrazione\n>> Moltiplicazione\n>> Divisione\n");
         String operazione = scanner.next();
-
-        System.out.print("\nPrimo numero: ");
-        double a = scanner.nextDouble();
-
-        System.out.print("Secondo numero: ");
-        double b = scanner.nextDouble();
+        double[] numbers = new double[2];
 
         switch (operazione.toLowerCase()) {
             case "addizione":
-                System.out.print("\nLa somma tra questi due numeri è: ");
-                addizione(a, b);
+                numbers = richiediNumeri(scanner);
+                System.out.println("\nLa somma tra questi due numeri è: " + addizione(numbers[0], numbers[1]));
                 break;
             case "sottrazione":
-                System.out.print("\nLa differenza tra questi due numeri è: ");
-                sottrazione(a, b);
+                numbers = richiediNumeri(scanner);
+                System.out.println("\nLa differenza tra questi due numeri è: " + sottrazione(numbers[0], numbers[1]));
                 break;
             case "divisione":
-                System.out.print("\nIl rapporto tra questi due numeri è: ");
-                divisione(a, b);
+                numbers = richiediNumeri(scanner);
+                double[] result = divisione(numbers[0], numbers[1]);
+                if (result[1] == 1){
+                    System.out.println("\nIl rapporto tra questi due numeri è: " + result[0]);
+                } else {
+                    System.out.println("\nLa divisione per zero è indefinita");
+                }
                 break;
             case "moltiplicazione":
-                System.out.print("\nIl prodotto tra questi due numeri è: ");
-                moltiplicazione(a, b);
+                numbers = richiediNumeri(scanner);
+                System.out.println("\nIl prodotto tra questi due numeri è: " + moltiplicazione(numbers[0], numbers[1]));
                 break;
             default:
                 System.out.println("\nOperazione non valida\n");
